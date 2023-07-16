@@ -33,6 +33,23 @@ console.log(fib(10));
 
 //Recursive Fibonacci
 
-function fibsRec(n) {
-    
+function fibsRec(n, a, b, array) {
+    if(n == 0)
+        return "You have entered 0?!";
+    else if(n == 1) 
+        return [0];
+    else if(n < 0)
+        return "Still dont understand this,, bitch!!";
+
+    if(n == 2)
+        return array;
+    else {
+        b = a + b;
+        array.push(b)
+        a = b - a;
+        n--;
+        return fibsRec(n, a, b, array);
+    }   
 }
+
+console.log(fibsRec(10, 0, 1, [0, 1]));
